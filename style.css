@@ -1,12 +1,11 @@
 .center-container {
     margin: 10px;
     padding: 10px;
-/*     height: 120px; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Optional: Set a specific height for vertical centering */
+    height: 100vh; 
     position: absolute;
     top: 50%;
     left: 50%;
@@ -103,18 +102,33 @@ button {
 }
 
 .dark-mode .quote-box {
-    background: #2c3e50; /* Dark mode background color */
-    color: #fff; /* Dark mode text color */
+    background: #2c3e50; 
+    color: #fff;
 }
 
 .dark-mode body {
-    background: #2c3e50; /* Dark mode body background color */
-    color: #fff; /* Dark mode body text color */
+    background: #2c3e50; 
+    color: #fff; 
 }
 
 #dark-toggle {
     position: absolute;
+    background-color:black ;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px; 
+    cursor: pointer;
+    border: none; 
+    border-radius: 5px;
+    left: 90%;
 }
+
+
+  
+#dark-toggle:hover {
+    background-color: #555; 
+}
+  
 
 @media (max-width: 800px) {
     .quote-box {
