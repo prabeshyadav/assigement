@@ -1,38 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    gap: 50px;
+  
+}
+.header-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .center-container {
     margin: 10px;
     padding: 10px;
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh; 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    align-items: center;   
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 10px 20px 0px rgba(0,0,0.0.5);
 }
 .head{
     display: flex;
     justify-content: center;
 }
-body{
-    overflow-x: hidden;
-  overflow-y: hidden; 
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-color: #fff;
-  z-index: -2;
-}
 
 #gQuote {
+    display: none;
     min-height: 3rem;
     text-align: center;
-    padding: 0 1rem;
     font-size: 1rem;
+    background-color: #c1c1c1;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 i{
@@ -45,6 +52,7 @@ i{
 h1{
     text-align: center;
     font-size: 3em;
+    margin-right: 20px;
 }
 #next{
     border-radius: 10px;
@@ -62,7 +70,7 @@ h1{
 }
 #previous{
     position:absolute;
-    left: 75%;
+    left: 65%;
     border-radius: 25px;
     background-color: rgb(23,124,229);
     display: flex;
@@ -73,15 +81,23 @@ h1{
     justify-content: center;
 }
 .quote-box{
-    width: 50%;
+    width: 90%;
     background: rgb(219, 218, 218);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px black;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.radio-btns{
+    padding: 20px;
 }
 .quote-box .form-check{
     display: flex;
     justify-content: center;
     display: inline;
+}
+.form-check-input{
+    cursor: pointer;
 }
 
 #slide-btns {
@@ -95,6 +111,8 @@ button {
     background: gray;
     border: none;
     border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
 }
 
 .quote-box .form-check label {
@@ -112,7 +130,6 @@ button {
 }
 
 #dark-toggle {
-    position: absolute;
     background-color:black ;
     color: #fff;
     padding: 10px 20px;
@@ -121,6 +138,9 @@ button {
     border: none; 
     border-radius: 5px;
     left: 90%;
+    right: 10px; /* Adjusted right position */
+    top: 10px; 
+    z-index: 19999;
 }
 
 
@@ -130,8 +150,37 @@ button {
 }
   
 
-@media (max-width: 800px) {
+/* @media (max-width: 800px) {
     .quote-box {
         width: 500px;
     }
+} */
+@media (max-width: 750px) {
+    .quote-box {
+        width: 95%;
+    }
+    .header-section{
+        flex-direction: column;
+    }
+    #slide-btns{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+@media (max-width: 400px) {
+    #dark-toggle {
+        padding: 8px 15px; 
+        font-size: 14px
+    }
+}
+.quote-box {
+    width: 80%; /* Adjusted width for medium-sized screens */
+}
+
+
+@media (max-width: 500px) {
+.quote-box {
+    width: 90%; /* Adjusted width for smaller screens */
+}
 }

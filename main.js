@@ -29,6 +29,8 @@ var currentComputerIndex = 0;
 var currentScienceIndex = 0;
 
 function generateQuote() {
+  document.getElementById('gQuote').style.display="block"
+
   if (document.getElementById("s").checked) {
     generatedQuote = scienceQuote[currentScienceIndex];
     currentScienceIndex = (currentScienceIndex + 1) % scienceQuote.length;
@@ -49,6 +51,8 @@ function generateQuote() {
 }
 
 function next() {
+  document.getElementById('gQuote').style.display="block"
+
   if (document.getElementById("s").checked) {
     if (currentScienceIndex < scienceQuote.length - 1) {
       currentScienceIndex++;
@@ -120,18 +124,24 @@ function darkToggle () {
 const fontIncrease = document.getElementById('btn-add')
 const fontDecrease = document.getElementById('btn-sub')
 const gQuote = document.getElementById('gQuote')
-let size = 1
+let size = 20
 
 function fontIncreaseFunc() {
   size = size + 1
-  gQuote.style.fontSize = `${size}rem`
-  console.log(size)
+  if(size>50){
+    return
+  }
+  gQuote.style.fontSize = `${size}px`
+  
 } 
 
 
 function fontDecreaseFunc() {
   size =size-1
+  if(size<20){
+    return
+  }
 
-  gQuote.style.fontSize=`${size}rem`
+  gQuote.style.fontSize=`${size}px`
 }
 
